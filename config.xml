@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs>
+  <config usuario="@">
+    <usuario>@</usuario>
+    <contraseña />
+    <secreta />
+    <rpb>16</rpb>
+    <tdb>1000</tdb>
+    <pdc>92</pdc>
+    <pdv>75</pdv>
+    <mdm>100</mdm>
+  </config>
+</configs>

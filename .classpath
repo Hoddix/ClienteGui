@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="/Users/anarkia13/Documents/workspace/FUT/gson-2.2.4.jar"/>
+	<classpathentry kind="lib" path="/Users/anarkia13/Documents/workspace/FUT/jdom-2.0.5.jar"/>
+	<classpathentry kind="lib" path="/Users/anarkia13/Documents/workspace/ClienteGui/jackson-annotations-2.2.0.jar"/>
+	<classpathentry kind="lib" path="/Users/anarkia13/Documents/workspace/ClienteGui/jackson-core-2.2.0.jar"/>
+	<classpathentry kind="lib" path="/Users/anarkia13/Documents/workspace/ClienteGui/jackson-databind-2.2.0.jar"/>
+	<classpathentry kind="lib" path="/Users/anarkia13/Documents/workspace/ClienteGui/substance.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

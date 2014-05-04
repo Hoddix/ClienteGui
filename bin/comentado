@@ -1,0 +1,221 @@
+        			
+//        			switch(tipo){
+//        			case "players":
+
+
+
+//        				break;
+//        			case "contracts":
+//        				//tipo 0","categoria 1","Nombre 2","id 3","card 4","team 5","P.Compra 6","P.Venta 7","P.Venta Ya 8","nat 9","Level 10","Posicion 11"
+//        				//resto = CrearURL.developmentURL(start, lev, cat, minb, maxb, micr, macr);
+//        				int lineaC = 0;
+//        				int expiresC = 0;
+//        				int iC = 0;
+//
+//        				while(expiresC<3650){
+//        					JTableFilas.filas("Recorriendo pagina "+iC); 
+//        					resto = CrearURL.developmentURL(lineaC, Gui.modeloTablaLista.getValueAt(x, 10).toString(), Gui.modeloTablaLista.getValueAt(x, 1).toString(), "", Gui.modeloTablaLista.getValueAt(x, 6).toString(), "", "");
+//        					ObjectMapper mapperC = new ObjectMapper();
+//        					JsonNode rootNodeC;									
+//        					rootNodeC = mapperC.readValue(Buscar.busquedaContrato(EAweb + resto).getBytes(), JsonNode.class);
+//        					System.out.println(rootNodeC);
+//        					JsonNode hitsC = rootNodeC.get("auctionInfo");
+//        					JsonNode oneHitC, dataObjC, dataObj2C, dataObj3C, dataObj4C;
+//        					int idxC = 0;
+//        					if (hitsC.equals("[]")==false){
+//        						while ((oneHitC = hitsC.get(idxC)) != null){
+//        							dataObjC = oneHitC.get("tradeId");
+//        							dataObj2C = oneHitC.get("expires");
+//        							
+//        							dataObj3C = oneHitC.get("itemData");
+//        							dataObj4C = dataObj3C.get("resourceId");
+//        							if(dataObj4C.toString().equalsIgnoreCase(Gui.modeloTablaLista.getValueAt(x, 3).toString())){
+//        								JTableFilas.filas("Comprado a "+Gui.modeloTablaLista.getValueAt(x, 2).toString()+"..."); 
+//                						//Thread.sleep(2000);
+//        							}
+//        							idxC++;
+//        							expiresC = dataObj2C.asInt();
+//        						}    
+//        					}else{
+//        						break;
+//        					}
+//        					if(Monedas.monedas()<1000){System.exit(0);}  
+//        					Thread.sleep(Integer.parseInt(Gui.txttiempo.getText()));
+//        					lineaC +=Integer.parseInt(Gui.txtcpbusqueda.getText());
+//        					iC++;
+//        				}
+//        				break;
+//        			case "fitness":
+//        				//resto = CrearURL.trainingURL(pos, playStyle, lev, cat, minb, maxb, micr, macr);
+//        				//tipo 0","categoria 1","Nombre 2","id 3","card 4","team 5","P.Compra 6","P.Venta 7","P.Venta Ya 8","nat 9","Level 10","Posicion 11"
+//        				int lineaF = 0;
+//        				int expiresF = 0;
+//        				int iF= 0;
+//
+//        				while(expiresF<3650){
+//        					JTableFilas.filas("Recorriendo pagina "+iF); 
+//        					resto = CrearURL.developmentURL(lineaF, Gui.modeloTablaLista.getValueAt(x, 10).toString(), Gui.modeloTablaLista.getValueAt(x, 1).toString(), "", Gui.modeloTablaLista.getValueAt(x, 6).toString(), "", "");
+//        					ObjectMapper mapperF = new ObjectMapper();
+//        					JsonNode rootNodeF;									
+//        					rootNodeF = mapperF.readValue(Buscar.busquedaContrato(EAweb + resto).getBytes(), JsonNode.class);
+//        					JsonNode hitsF = rootNodeF.get("auctionInfo");
+//        					JsonNode oneHitF, dataObjF, dataObj2F, dataObj3F, dataObj4F;
+//        					int idxF = 0;
+//        					if (hitsF.equals("[]")==false){
+//        						while ((oneHitF = hitsF.get(idxF)) != null){
+//        							dataObjF = oneHitF.get("tradeId");
+//        							dataObj2F = oneHitF.get("expires");
+//        							dataObj3F = oneHitF.get("itemData");
+//        							dataObj4F = dataObj3F.get("resourceId");
+//        							if(dataObj4F.toString().equalsIgnoreCase(Gui.modeloTablaLista.getValueAt(x, 3).toString())){
+//        								JTableFilas.filas("Comprado a "+Gui.modeloTablaLista.getValueAt(x, 2).toString()+"..."); 
+//        							}
+//        							idxF++;
+//        							expiresF = dataObj2F.asInt();
+//        						}    
+//        					}else{
+//        						break;
+//        					}
+//        					if(Monedas.monedas()<1000){System.exit(0);}  
+//        					
+//        					Thread.sleep(Integer.parseInt(Gui.txttiempo.getText()));
+//        					
+//        					lineaF += Integer.parseInt(Gui.txtcpbusqueda.getText());
+//        					
+//        					iF++;
+//        				}
+//        				break;
+//        			}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    //Mover a Mazo de cambio
+//    static void listaCompra(int fila) throws Exception{           
+//        String lineListaCompra = MoverCompras.listaCompra();       
+//        
+//		try{
+//		ObjectMapper mapper = new ObjectMapper();
+//		JsonNode rootNode;
+//		rootNode = mapper.readValue(lineListaCompra.getBytes(), JsonNode.class);
+//		JsonNode hits = rootNode.get("itemData");
+//		JsonNode oneHit, dataObj;
+//		int idx = 0;
+//		if (hits != null){
+//			while ((oneHit = hits.get(idx)) != null){
+//				dataObj = oneHit.get("id");
+//				moverContrato(dataObj.toString(),fila);	
+//				idx++;
+//			}    
+//		}
+//		}catch(Exception e){}
+//        
+//        Thread.sleep(Integer.parseInt(Gui.txttiempo.getText()));
+//    }
+//    
+//    static void moverContrato(String id, int fila) throws Exception{            
+//        String success = MoverCompras.moverCompra(id);
+//		try{
+//		ObjectMapper mapper = new ObjectMapper();
+//		JsonNode rootNode;
+//		rootNode = mapper.readValue(success.getBytes(), JsonNode.class);
+//		JsonNode hits = rootNode.get("itemData");
+//		JsonNode oneHit, dataObj;
+//		oneHit = hits.get(0);
+//		dataObj = oneHit.get("success");
+//				if(dataObj.toString().equalsIgnoreCase("true")==true){
+//					JTableFilas.filas("Moviendo "+Gui.modeloTablaJugadores.getValueAt(fila, 0).toString()+" al mazo de cambio");
+//					tradePile(fila);
+//				}else{
+//					JTableFilas.filas("No se ha movido "+Gui.modeloTablaJugadores.getValueAt(fila, 0).toString()+" al mazo de cambio");
+//				}
+//
+//		}catch(Exception e){}
+//        
+//        Thread.sleep(Integer.parseInt(Gui.txttiempo.getText()));
+//    }
+//            
+//     //Venta
+//    static void tradePile(int fila) throws Exception{
+//        String lineTradePile = Vender.tradePile();
+//		try{
+//			ObjectMapper mapper = new ObjectMapper();
+//			JsonNode rootNode;
+//			rootNode = mapper.readValue(lineTradePile.getBytes(), JsonNode.class);
+//			JsonNode hits = rootNode.get("auctionInfo");
+//			JsonNode oneHit, dataObj, dataObj2, dataObj3, dataObj4, dataObj5, dataObj6, dataObj7;
+//			int idx = 0;
+//			if (hits != null){
+//				while ((oneHit = hits.get(idx)) != null){
+//					System.out.println(idx);
+//					idx++;
+//				}    
+//			}
+//			if(idx==0){
+//				busqueda();
+//			}else{
+//				monedasRestantes=Monedas.monedas();
+//				Gui.mostrarMonedas(monedasRestantes);
+//				try{
+//					mapper = new ObjectMapper();
+//					rootNode = mapper.readValue(lineTradePile.getBytes(), JsonNode.class);
+//					hits = rootNode.get("auctionInfo");
+//					idx = 0;
+//					if (hits != null){
+//						while ((oneHit = hits.get(idx)) != null){
+//							dataObj = oneHit.get("tradeId");
+//							dataObj2 = oneHit.get("currentBid");
+//							dataObj3 = oneHit.get("expires");
+//							dataObj4 = oneHit.get("buyNowPrice");
+//							dataObj5 = oneHit.get("startingBid");
+//							dataObj6 = oneHit.get("itemData");
+//							dataObj7 = dataObj6.get("id");
+//							idx++;
+//							if(dataObj2.asInt()>0){
+//								System.out.println("1");
+//								eliminarContrato(dataObj.toString());
+//							}else if(dataObj3.asInt()==0){
+//								System.out.println("2");
+//								actionHouse(dataObj7.toString(),fila);
+//							}else if(dataObj3.asInt()==-1){
+//								System.out.println("3");
+//								actionHouseNoComprado(dataObj7.toString(),dataObj5.asInt(),dataObj4.asInt());
+//							}
+//						}    
+//					}		
+//				}catch(Exception e){}		
+//			}
+//	        if(contador>=30){Thread.sleep(60000);}
+//	        
+//	        Thread.sleep(Integer.parseInt(Gui.txttiempo.getText()));
+//		}catch(Exception e){}
+//    } 
+//    
+//    static void actionHouse(String itemId, int fila) throws Exception{   
+//        Vender.actionHouse(itemId,fila);
+//        JTableFilas.filas("Colocado "+Gui.modeloTablaJugadores.getValueAt(fila, 0).toString()+" en venta por "+Gui.modeloTablaJugadores.getValueAt(fila, 6)+" monedas");
+//        Thread.sleep(Integer.parseInt(Gui.txttiempo.getText()));             
+//    } 
+//    
+//    static void actionHouseNoComprado(String itemId, int startingBid, int buyNowPrice) throws Exception{   
+//        Vender.actionHouseNoComprado(itemId,startingBid,buyNowPrice);
+//        JTableFilas.filas("Colocado jugador en venta por "+startingBid+" monedas");
+//        Thread.sleep(Integer.parseInt(Gui.txttiempo.getText()));             
+//    } 
+//    
+//    //Eliminar vendidos
+//    static void eliminarContrato(String tradeId) throws Exception{
+//        Vender.eliminarContrato(tradeId);
+//        JTableFilas.filas("Eliminando jugador vendido");
+//        Thread.sleep(Integer.parseInt(Gui.txttiempo.getText()));
+//    }

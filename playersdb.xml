@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<players>
+  <player id="188567">
+    <tipo>players</tipo>
+    <categoria>player</categoria>
+    <name>Pierre-Emerick Aubameyang</name>
+    <id>188567</id>
+    <card>1</card>
+    <preciocompra>3500</preciocompra>
+    <precioventa />
+    <precioventaya />
+    <level>gold</level>
+    <posicion>ST</posicion>
+  </player>
+  <player id="198710">
+    <tipo>players</tipo>
+    <categoria>player</categoria>
+    <name>James Rodríguez</name>
+    <id>198710</id>
+    <card>1</card>
+    <preciocompra>650</preciocompra>
+    <precioventa />
+    <precioventaya />
+    <level>gold</level>
+    <posicion>RW</posicion>
+  </player>
+</players>
